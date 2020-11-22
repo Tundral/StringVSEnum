@@ -16,8 +16,8 @@ public class StringVSEnum {
 
 
         //Create lists for strings and the DayOFPeriod objects
-        ArrayList<String> strings = new ArrayList<String>();
-        ArrayList<DayOfPeriod> dops = new ArrayList<DayOfPeriod>();
+        ArrayList<String> strings = new ArrayList<>();
+        ArrayList<DayOfPeriod> dops = new ArrayList<>();
 
 
         //Generate 'rounds' amount of objects with random fields
@@ -42,40 +42,22 @@ public class StringVSEnum {
             stringweek = null;
 
             //Set string values in swtiches according to generated integers
-            switch (day) {
-                case 1:
-                    stringday = "ma";
-                    break;
-                case 2:
-                    stringday = "ti";
-                    break;
-                case 3:
-                    stringday = "ke";
-                    break;
-                case 4:
-                    stringday = "to";
-                    break;
-                case 5:
-                    stringday = "pe";
-                    break;
-                case 6:
-                    stringday = "la";
-                    break;
-                case 7:
-                    stringday = "su";
-                    break;
-            }
-            switch (week) {
-                case 1:
-                    stringweek = "1";
-                    break;
-                case 2:
-                    stringweek = "2";
-                    break;
-                case 3:
-                    stringweek = "3";
-                    break;
-            }
+            stringday = switch (day) {
+                case 1 -> "ma";
+                case 2 -> "ti";
+                case 3 -> "ke";
+                case 4 -> "to";
+                case 5 -> "pe";
+                case 6 -> "la";
+                case 7 -> "su";
+                default -> stringday;
+            };
+            stringweek = switch (week) {
+                case 1 -> "1";
+                case 2 -> "2";
+                case 3 -> "3";
+                default -> stringweek;
+            };
 
             //Add appropriate objects to the ArrayLists
             strings.add(stringday + stringweek);
@@ -124,6 +106,7 @@ public class StringVSEnum {
         printFirstLastFive.print(strings);
         System.out.println("===================================");
         printFirstLastFive.print(dops);
+
 
          */
     }
